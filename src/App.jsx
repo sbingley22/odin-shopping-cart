@@ -20,7 +20,7 @@ const App = () => {
             <Link to="home">Home</Link>
             <Link to="shop">Shop</Link>
             <div className={styles.cart}>
-              <img className={styles.icon} src="../public/cart.svg" alt="" />
+              <img className={styles.icon} src="/cart.svg" alt="" />
               <p>{cart.length}</p>
               </div>
         </nav>
