@@ -1,24 +1,32 @@
-import './App.css'
+import styles from './App.module.css'
+import "./index.css"
 import { Link, Outlet } from 'react-router-dom';
+import { useState } from "react";
 
 const App = () => {
+  const [cart, setCart] = useState([])  
+
+  const addItem = (id) => {
+    const newCart = [...cart, id]
+    setCart(newCart)
+    console.log(newCart.length)
+  }
+
   return (
-    <div>
-      <div className="navigation-bar">
-        <h1>Hello from the main page of the app!</h1>
+    <div className={styles.root}>
+      <div className={styles.navigationBar}>
+        <h1>MetaboFix</h1>
         <nav>
-          <ul>
-            <li>
-              <Link to="home">Home page</Link>
-            </li>
-            <li>
-              <Link to="shop">Shop page</Link>
-            </li>
-          </ul>
+            <Link to="home">Home</Link>
+            <Link to="shop">Shop</Link>
+            <div className={styles.cart}>
+              <img className={styles.icon} src="../public/cart.svg" alt="" />
+              <p>{cart.length}</p>
+              </div>
         </nav>
       </div>
-      <div className='app-content'>
-        <Outlet />
+      <div className={styles.appContent}>
+        <Outlet context={[addItem]} />
       </div>
     </div>
   );

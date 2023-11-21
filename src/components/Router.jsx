@@ -13,7 +13,10 @@ const Router = () => {
       children: [
         { index: true, element: <Home /> },
         { path: "home", element: <Home /> },
-        { path: "shop", element: <Shop /> },
+        { 
+          path: "shop", 
+          element: <Shop />,
+        },
       ]
     },
   ])

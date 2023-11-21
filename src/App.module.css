@@ -1,0 +1,67 @@
+.root {
+  padding: 0px;
+}
+
+.navigationBar {
+  padding: 0 40px;
+  background-color: rgb(22,22,22);
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 16px;
+  align-items: center;
+}
+
+.navigationBar h1 {
+  background: linear-gradient(45deg, rgb(255, 0, 0),  #ff8a00); /* Adjust colors as needed */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: 2rem;
+}
+
+.navigationBar nav {
+  font-size: 1rem;
+  display: grid;
+  text-decoration: none;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  justify-self: end;
+}
+
+.navigationBar nav * {
+  font-size: 2rem;
+  display: inline;
+}
+
+.cart {
+  border: 2px solid aliceblue;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  filter: invert(75%);
+}
+
+.navigationBar p {
+  font-size: 1rem;
+  display: inline;
+  color: aliceblue;
+  margin: 5px
+}
+
+@media (max-width: 768px) {
+  .navigationBar {
+    grid-template-columns: 1fr; /* Change to a single column for smaller screens */
+    justify-items: center;
+  }
+  .navigationBar nav {
+    justify-self: center;
+  }
+}
+
+.appContent {
+  padding: 0 40px;
+}
